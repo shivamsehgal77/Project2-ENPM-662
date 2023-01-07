@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="batbat">
+<link name="dummy_link">
+  <pose>0 0 0 0 0 0</pose>
+  </link>
+  <joint name="dummy_joint" type="fixed">
+    <parent
+  	  link="dummy_link" />
+    <child
+      link="bat" />
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="bat">
+    <inertial>
+      <origin
+        xyz="-0.00486599634331379 -6.69841468503707E-18 0.324027623484238"
+        rpy="0 0 0" />
+      <mass
+        value="50.7232439388311" />
+      <inertia
+        ixx="1.09055826124951"
+        ixy="-3.35269528592248E-09"
+        ixz="-3.3812326891182E-18"
+        iyy="3.83396354011628"
+        iyz="6.15284732885524E-18"
+        izz="4.83272431412613" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://batbat/meshes/bat.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://batbat/meshes/bat.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="left_rear_wheel">
+    <inertial>
+      <origin
+        xyz="1.66533453693773E-16 -8.32667268468867E-17 -0.0385"
+        rpy="0 0 0" />
+      <mass
+        value="0.573286729576328" />
+      <inertia
+        ixx="0.00239463603464469"
+        ixy="-7.27413290431382E-19"
+        ixz="5.45949532263419E-19"
+        iyy="0.0023946360346447"
+        iyz="-2.06639055511541E-19"
+        izz="0.00432457445366218" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://batbat/meshes/left_rear_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://batbat/meshes/left_rear_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_rear_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.254 0.166 0.1015"
+      rpy="1.5707963267949 0 0" />
+    <parent
+      link="bat" />
+    <child
+      link="left_rear_wheel" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="right_rear_wheel">
+    <inertial>
+      <origin
+        xyz="0 2.77555756156289E-17 -0.0385"
+        rpy="0 0 0" />
+      <mass
+        value="0.573286729576328" />
+      <inertia
+        ixx="0.0023946360346447"
+        ixy="1.64596017200982E-20"
+        ixz="-2.10404479653222E-19"
+        iyy="0.00239463603464469"
+        iyz="4.09320571474671E-21"
+        izz="0.00432457445366218" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://batbat/meshes/right_rear_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://batbat/meshes/right_rear_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_rear_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.254 -0.166 0.1015"
+      rpy="-1.5707963267949 0 0" />
+    <parent
+      link="bat" />
+    <child
+      link="right_rear_wheel" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="left_front_wheel">
+    <inertial>
+      <origin
+        xyz="-5.68062037409334E-08 -0.0303204178096878 0.135651534929482"
+        rpy="0 0 0" />
+      <mass
+        value="0.476285675559157" />
+      <inertia
+        ixx="0.00308338361390996"
+        ixy="1.67634769313375E-09"
+        ixz="-1.85092014262691E-09"
+        iyy="0.00267628266798719"
+        iyz="0.000153347484245119"
+        izz="0.000502340348058678" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://batbat/meshes/left_front_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://batbat/meshes/left_front_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_front_wheel_joint"
+    type="revolute">
+    <origin
+      xyz="0.254 0.204 0.3265"
+      rpy="3.14159265358979 0 0" />
+    <parent
+      link="bat" />
+    <child
+      link="left_front_wheel" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3"
+      upper="3"
+      effort="10"
+      velocity="100" />
+  </joint>
+  <link
+    name="left_roll">
+    <inertial>
+      <origin
+        xyz="-5.55111512312578E-17 0 -0.0385"
+        rpy="0 0 0" />
+      <mass
+        value="0.573286729576329" />
+      <inertia
+        ixx="0.0023946360346447"
+        ixy="2.38767751764967E-20"
+        ixz="5.17032334026986E-19"
+        iyy="0.0023946360346447"
+        iyz="-2.92576549499483E-19"
+        izz="0.00432457445366219" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://batbat/meshes/left_roll.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://batbat/meshes/left_roll.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_roll_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.038 0.225"
+      rpy="-1.5707963267949 0 0" />
+    <parent
+      link="left_front_wheel" />
+    <child
+      link="left_roll" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="right_front_wheel">
+    <inertial>
+      <origin
+        xyz="5.68062039074668E-08 0.0303204178096884 0.135651534929482"
+        rpy="0 0 0" />
+      <mass
+        value="0.476285675559157" />
+      <inertia
+        ixx="0.00308338361390996"
+        ixy="1.67634769328428E-09"
+        ixz="1.85092014321466E-09"
+        iyy="0.0026762826679872"
+        iyz="-0.000153347484245121"
+        izz="0.000502340348058678" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://batbat/meshes/right_front_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://batbat/meshes/right_front_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_front_wheel_joint"
+    type="revolute">
+    <origin
+      xyz="0.254 -0.203999999999999 0.3265"
+      rpy="3.14159265358979 0 0" />
+    <parent
+      link="bat" />
+    <child
+      link="right_front_wheel" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3"
+      upper="3"
+      effort="10"
+      velocity="100" />
+  </joint>
+  <link
+    name="right_roll">
+    <inertial>
+      <origin
+        xyz="0 -5.55111512312578E-17 -0.0384999999999997"
+        rpy="0 0 0" />
+      <mass
+        value="0.573286729576328" />
+      <inertia
+        ixx="0.0023946360346447"
+        ixy="1.07472378557313E-18"
+        ixz="2.45111503531771E-19"
+        iyy="0.00239463603464469"
+        iyz="5.1029475068558E-20"
+        izz="0.00432457445366218" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://batbat/meshes/right_roll.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://batbat/meshes/right_roll.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_roll_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.0379999999999993 0.225"
+      rpy="-1.5707963267949 0 3.14159265358979" />
+    <parent
+      link="right_front_wheel" />
+    <child
+      link="right_roll" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+<transmission name="rear_motor_left">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="left_rear_wheel_joint">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="rear_motor_left">
+      <mechanicalReduction>100</mechanicalReduction>
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+  <transmission name="rear_motor_right">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="right_rear_wheel_joint">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="rear_motor_right">
+      <mechanicalReduction>100</mechanicalReduction>
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+  <transmission name="front_motor_right">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="right_front_wheel_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="front_motor_right">
+      <mechanicalReduction>50</mechanicalReduction>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+  <transmission name="front_motor_left">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="left_front_wheel_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="front_motor_left">
+      <mechanicalReduction>50</mechanicalReduction>
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+</robot>

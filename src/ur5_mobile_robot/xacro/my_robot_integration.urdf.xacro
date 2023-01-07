@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!-- Name your robot here -->
+<robot name ="batbat" xmlns:xacro="http://wiki.ros.org/xacro">
+
+<!-- Include your urdf files here -->
+	<!-- Include Robot's urdf filepath -->
+	<!-- Include Lidar's urdf filepath -->
+	<xacro:include filename="$(find ur5_mobile_robot)/urdf/batbat.urdf"/>
+	<xacro:include filename="$(find ur5_mobile_robot)/urdf/ur5_original_bat.urdf"/>
+
+<!-- Add your gazebo sensors here -->
+	
+
+<!--  Gazebo plugin for control here is already added for you -->
+	<gazebo>
+		<plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+			<robotNamespace>/batbat</robotNamespace>
+			<robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+			<legacyModeNS>true</legacyModeNS>
+		</plugin>
+	</gazebo>
+
+
+
+
+<!-- Create a joint between your robot and sensor -->
+  <joint name="bat_bat_to_base" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0.400"/>
+    <parent link="bat"/>
+    <child link="base_link"/>
+    <axis xyz="0 0 0"/>
+  </joint>	
+
+</robot>	
+
+

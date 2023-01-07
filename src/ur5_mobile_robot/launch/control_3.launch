@@ -1,0 +1,45 @@
+<launch>
+
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" default="$(find ur5_mobile_robot)/world/simple_pick_and_place_1"/>
+    <arg name="paused" value="true"/>
+  </include>
+
+
+  <!-- Load joint controller configurations from YAML file to parameter server -->
+  <rosparam file="$(find ur5_mobile_robot)/config/config.yaml" command="load"/>
+
+    <param name="robot_description" textfile="$(find ur5_mobile_robot)/urdf/batbat_ur5.urdf" />
+    <!-- Add in your robot name in the value tag -->
+    <param name = "my_robot" value="batbat"/> 
+	  <arg name ="init_pose" value="-x 0 -y 0 -z 0 -R 0 -P 0 -Y 0"/>
+
+
+  <!-- load the controllers -->
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+    output="screen"  args=" 
+    joint_state_controller shoulder_sweep_position_controller
+    shoulder_lift_position_controller elbow_position_controller
+    wrist_pitch_position_controller wrist_roll_position_controller 
+    wrist_yaw_position_controller rear_motor_left rear_motor_right front_motor_left front_motor_right"/>
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+    respawn="false" output="screen">
+    <remap from="/joint_states" to="/ur5/joint_states" />
+  </node>
+
+  <node
+		name="spawn_model"
+		pkg="gazebo_ros"
+		type="spawn_model"
+		args="$(arg init_pose) -param robot_description -urdf -model my_robot"
+		output="screen"/>
+
+
+
+
+  <!-- <node name= "talker" pkg="robot_control" type= "control_multiple.py" output="screen"/> -->
+  <!-- convert joint states to TF transforms for rviz, etc -->
+
+
+</launch>

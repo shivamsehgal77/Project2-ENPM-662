@@ -1,0 +1,1 @@
+controller_joint_names: ['', 'left_rear_wheel_joint', 'right_rear_wheel_joint', 'left_front_wheel_joint', 'left_roll_joint', 'right_front_wheel_joint', 'right_roll_joint', 'shoulder_sweep_joint', 'shoulder_lift_joint', 'elbow_joint', 'wrist_pitch_joint', 'wrist_roll_joint', 'wrist_yaw_joint', ]
